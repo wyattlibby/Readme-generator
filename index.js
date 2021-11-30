@@ -7,7 +7,31 @@ const questions = [
     {
         message:"what is the name of your project",
         name:"name"
-    }
+    },
+    {
+        message:"description",
+        name:"description"
+    },
+    {
+        message:"installation",
+        name:"installation"
+    },
+    {
+        message:"usage",
+        name:"usage"
+    },{
+        message:"testing",
+        name:"testing"
+    },{
+        message:"contact",
+        name:"contact"
+    },
+    {
+        message:"license",
+        name:"license",
+        type:"list",
+        choices:["apache","mit","gnu"]
+    },
 ];
 
 // TODO: Create a function to write README file
