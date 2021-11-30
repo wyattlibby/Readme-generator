@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
-
+const fs= require ("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -41,7 +42,10 @@ function writeToFile(fileName, data) {}
 async function init() {
     console.log("welcome to my readme app");
     const response= await inquirer.prompt(questions);
-    console.log("project name:",response.name);
+    const markdown= generateMarkdown(response);
+    fs.writeFileSync("./dist/readme.md",markdown);
+    console.log("thank you for using my app");
+    process.exit();
 }
 
 // Function call to initialize app
